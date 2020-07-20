@@ -1,1 +1,1 @@
-# azure_spring_cloud_apps
+# Azure Spring Cloud Sample Applications
