@@ -9,5 +9,5 @@ import org.springframework.web.bind.annotation.GetMapping;
 public interface CityServiceClient{
 
     @GetMapping("/cities")
-    List<List<City>> getAllCities();
+    public List<City> getAllCities();
 }

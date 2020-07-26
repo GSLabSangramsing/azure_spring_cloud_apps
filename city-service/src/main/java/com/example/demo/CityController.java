@@ -1,8 +1,8 @@
 package com.example.demo;
 
-import reactor.core.publisher.Flux;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import java.util.List;
 
 @RestController
@@ -15,7 +15,7 @@ public class CityController {
     }
 
     @GetMapping("/cities")
-    public Flux<List<City>> getAllCities() {
-        return (Flux<List<City>>) cityRepository.findAll();
+    public List<City> getAllCities() {
+        return (List<City>) cityRepository.findAll();
     }
 }

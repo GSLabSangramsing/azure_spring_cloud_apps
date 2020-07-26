@@ -2,5 +2,10 @@ package com.example.demo;
 
 import org.springframework.data.repository.CrudRepository;
 
-public interface WeatherRepository extends CrudRepository<Weather, String> {
+import java.util.Optional;
+
+public interface WeatherRepository extends  CrudRepository<Weather, String> {
+
+    public Optional<Weather> findByIcon(String icon);
+
 }

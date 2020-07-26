@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -11,6 +12,7 @@ public class Weather {
 
     private String description;
 
+    @Column(name = "icon")
     private String icon;
 
     public String getCity() {

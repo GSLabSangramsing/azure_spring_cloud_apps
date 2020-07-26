@@ -23,10 +23,10 @@ public class AllCitiesWeatherController {
 
     @GetMapping("/")
     public List<Weather> getAllCitiesWeather(){
-        Stream<City> allCities = cityServiceClient.getAllCities().stream().flatMap(list -> list.stream());
+        List<City> allCityList = cityServiceClient.getAllCities();
 
         //Obtain weather for all cities in parallel
-        List<Weather> allCitiesWeather = allCities.parallel()
+        List<Weather> allCitiesWeather = allCityList.stream().parallel()
                 .peek(city -> System.out.println("City: >>"+city.getName()+"<<"))
                 .map(city -> weatherServiceClient.getWeatherForCity(city.getName()))
                 .collect(Collectors.toList());
